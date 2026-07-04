@@ -1,0 +1,8 @@
+{
+  "图片": [".jpg", ".jpeg", ".png", ".gif", ".bmp", ".webp", ".svg", ".ico", ".raw", ".tiff", ".psd"],
+  "视频": [".mp4", ".avi", ".mkv", ".mov", ".wmv", ".flv", ".webm", ".m4v", ".mpeg", ".3gp"],
+  "文档": [".doc", ".docx", ".pdf", ".txt", ".xls", ".xlsx", ".ppt", ".pptx", ".csv", ".rtf", ".md"],
+  "安装包": [".exe", ".msi", ".msu", ".msp"],
+  "压缩包": [".zip", ".rar", ".7z", ".tar", ".gz", ".bz2", ".xz", ".iso"],
+  "脚本": [".py", ".js", ".sh", ".bat", ".cmd", ".ps1", ".vbs", ".lua", ".php"]
+}
