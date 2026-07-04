@@ -1,31 +1,45 @@
 # Windows 文件整理工具
 
+![GitHub stars](https://img.shields.io/github/stars/ZYH1056/WindowsFileOrganizer)
+![GitHub forks](https://img.shields.io/github/forks/ZYH1056/WindowsFileOrganizer)
+![GitHub license](https://img.shields.io/github/license/ZYH1056/WindowsFileOrganizer)
+![GitHub last commit](https://img.shields.io/github/last-commit/ZYH1056/WindowsFileOrganizer)
+
 由 **搞机协会** 开发，专为 Windows 用户打造的本地文件管理利器。完全离线运行，不上传任何数据，保护您的隐私安全。
 
 ## ✨ 功能特性
 
-- **目录选择** - 支持桌面、下载目录、U盘等任意本地路径，支持多选路径扫描
-- **自动分类** - 根据文件后缀自动分拣到对应分类文件夹（图片、视频、文档、安装包、压缩包、脚本）
-- **自定义规则** - 支持用户自定义后缀分类规则
-- **重复文件检测** - 通过 SHA-256 哈希比对精准查找重复文件，支持批量删除冗余副本
-- **批量重命名** - 支持添加前缀、后缀、数字序列、日期等多种重命名规则，实时预览修改效果
-- **一键规整桌面** - 一键将桌面所有文件移入「桌面归档」文件夹，自动忽略快捷方式
-- **操作撤回** - 可撤回最近一次文件移动、删除或重命名操作，防止误操作
-- **ZIP 打包归档** - 选中文件批量打包为 ZIP，可按分类单独压缩保存
-- **浅色/深色模式** - 支持界面主题切换，适配不同使用场景
-- **操作日志** - 本地生成 txt 操作日志，方便追溯
+| 功能 | 描述 |
+|------|------|
+| **目录选择** | 支持桌面、下载目录、U盘等任意本地路径，支持多选路径扫描 |
+| **自动分类** | 根据文件后缀自动分拣到对应分类文件夹（图片、视频、文档、安装包、压缩包、脚本） |
+| **自定义规则** | 支持用户自定义后缀分类规则，灵活适配个人需求 |
+| **重复文件检测** | 通过 SHA-256 哈希比对精准查找重复文件，支持批量删除冗余副本 |
+| **批量重命名** | 支持添加前缀、后缀、数字序列、日期等多种重命名规则，实时预览修改效果 |
+| **一键规整桌面** | 一键将桌面所有文件移入「桌面归档」文件夹，自动忽略快捷方式 |
+| **操作撤回** | 可撤回最近一次文件移动、删除或重命名操作，防止误操作 |
+| **ZIP 打包归档** | 选中文件批量打包为 ZIP，可按分类单独压缩保存 |
+| **浅色/深色模式** | 支持界面主题切换，适配不同使用场景 |
+| **操作日志** | 本地生成 txt 操作日志，方便追溯操作历史 |
+
+## 🎯 适用场景
+
+- 📁 **桌面整理**：一键清理杂乱的桌面文件，自动分类归档
+- 💾 **磁盘清理**：扫描重复文件，释放磁盘空间
+- 📂 **文件管理**：批量重命名、分类整理下载目录
+- 📦 **备份归档**：按分类打包文件，便于备份和分享
 
 ## 📦 安装方式
 
 ### 方式一：下载预编译版本
 
-直接从 [Releases](https://github.com/gaoji-xiehui/WindowsFileOrganizer/releases) 页面下载 `WindowsFileOrganizer.exe`，双击即可运行，无需安装任何依赖。
+直接从 [Releases](https://github.com/ZYH1056/WindowsFileOrganizer/releases) 页面下载 `WindowsFileOrganizer.exe`，双击即可运行，无需安装任何依赖。
 
 ### 方式二：从源码构建
 
 ```bash
 # 克隆仓库
-git clone https://github.com/gaoji-xiehui/WindowsFileOrganizer.git
+git clone https://github.com/ZYH1056/WindowsFileOrganizer.git
 cd WindowsFileOrganizer
 
 # 安装依赖
@@ -96,6 +110,43 @@ build.bat
 └─────────────────────────────────────────────────────────────┘
 ```
 
+## 🛠️ 技术栈
+
+- **语言**: Python 3.10+
+- **GUI框架**: PyQt6
+- **打包工具**: PyInstaller
+- **许可证**: MIT
+
+## 📁 项目结构
+
+```
+WindowsFileOrganizer/
+├── main.py                    # 程序入口
+├── requirements.txt           # 依赖列表
+├── build.spec                 # PyInstaller 打包配置
+├── build.bat                  # 一键打包脚本
+├── LICENSE                    # MIT 许可证
+├── README.md                  # 使用文档
+├── .gitignore                 # Git 忽略配置
+├── core/                      # 核心业务逻辑
+│   ├── file_scanner.py        # 文件扫描
+│   ├── classifier.py          # 自动分类
+│   ├── duplicate_finder.py    # 重复文件检测
+│   ├── batch_rename.py        # 批量重命名
+│   ├── desktop_organizer.py   # 桌面规整
+│   ├── undo_manager.py        # 撤回管理器
+│   └── zipper.py              # ZIP打包
+├── ui/                        # GUI界面
+│   ├── main_window.py         # 主窗口
+│   └── widgets/               # 组件
+│       ├── directory_tree.py  # 目录树
+│       ├── file_list.py       # 文件列表
+│       ├── operation_panel.py # 操作面板
+│       └── dialogs/           # 弹窗组件
+└── data/
+    └── default_rules.json     # 默认分类规则
+```
+
 ## 🔒 安全说明
 
 - ✅ 所有操作均在本地执行，不上传任何数据到外网
@@ -114,3 +165,5 @@ MIT License - 详见 [LICENSE](LICENSE)
 ---
 
 **搞机协会** 出品 💻
+
+如果这个项目对你有帮助，请给个 ⭐ Star 支持一下！
